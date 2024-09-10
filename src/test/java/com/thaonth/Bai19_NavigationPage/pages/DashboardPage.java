@@ -1,4 +1,4 @@
-package com.thaonth.Bai17_PageObjectModel.pages;
+package com.thaonth.Bai19_NavigationPage.pages;
 
 import com.thaonth.keywords.WebUI;
 import org.openqa.selenium.By;
@@ -6,12 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-public class DashboardPage {
+public class DashboardPage extends CommonPage {
 
     WebDriver driver;
     SoftAssert softAssert = new SoftAssert();
 
     public DashboardPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
