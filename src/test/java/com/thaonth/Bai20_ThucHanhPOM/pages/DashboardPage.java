@@ -1,4 +1,4 @@
-package com.thaonth.Bai19_NavigationPage.pages;
+package com.thaonth.Bai20_ThucHanhPOM.pages;
 
 import com.thaonth.keywords.WebUI;
 import org.openqa.selenium.By;
