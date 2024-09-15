@@ -1,4 +1,4 @@
-package com.thaonth.Bai17_PageObjectModel.pages;
+package com.thaonth.Bai19_NavigationPage.pages;
 
 import com.thaonth.keywords.WebUI;
 import org.openqa.selenium.By;
@@ -6,12 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-public class DashboardPage {
+public class DashboardPage extends CommonPage {
 
     WebDriver driver;
     SoftAssert softAssert = new SoftAssert();
 
     public DashboardPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
@@ -50,7 +51,7 @@ public class DashboardPage {
     }
 
     public void verifyQuickStatisticsSectionDisplayed(){
-        WebUI.elementIsDisplayed( checkboxQuickStatistics);
+        WebUI.elementIsDisplayed(checkboxQuickStatistics);
         Assert.assertTrue(driver.findElement(checkboxQuickStatistics).isSelected(),"FAIL!!! Checkbox Quick Statistics not selected.");
         softAssert.assertTrue(WebUI.elementIsDisplayed(totalInvoicesAwaitingPayment), "FAIL!!! totalInvoicesAwaitingPayment not displayed.");
         softAssert.assertTrue(WebUI.elementIsDisplayed(totalConvertedLeads), "FAIL!!! total ConvertedLeads not displayed.");

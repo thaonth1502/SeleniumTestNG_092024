@@ -1,7 +1,7 @@
-package com.thaonth.Bai17_PageObjectModel.testcases;
+package com.thaonth.Bai20_ThucHanhPOM.testcases;
 
-import com.thaonth.Bai17_PageObjectModel.pages.DashboardPage;
-import com.thaonth.Bai17_PageObjectModel.pages.LoginPage;
+import com.thaonth.Bai20_ThucHanhPOM.pages.DashboardPage;
+import com.thaonth.Bai20_ThucHanhPOM.pages.LoginPage;
 import com.thaonth.common.BaseTest;
 import org.testng.annotations.Test;
 
@@ -13,9 +13,8 @@ public class DashboardTest extends BaseTest {
     @Test
     public void testCheckQuickStatisticsSection(){
            loginPage = new LoginPage(driver);
-           loginPage.loginCRM("admin@example.com", "123456");
+           dashboardPage = loginPage.loginCRM("admin@example.com", "123456");
 
-           dashboardPage = new DashboardPage(driver);
            dashboardPage.checkTotalInvoicesAwaitingPayment("4 / 5");
            dashboardPage.checkTotalConvertedLeads("1 / 6");
            dashboardPage.checkTotalProjectsInProgress("1 / 7");
@@ -25,9 +24,8 @@ public class DashboardTest extends BaseTest {
     @Test
     public void testCheckSectionQuickStatisticsDisplayed(){
         loginPage = new LoginPage(driver);
-        loginPage.loginCRM("admin@example.com", "123456");
+        dashboardPage = loginPage.loginCRM("admin@example.com", "123456");
 
-        dashboardPage = new DashboardPage(driver);
         dashboardPage.clickDashboardOptionButton();
         dashboardPage.verifyQuickStatisticsSectionDisplayed();
     }
