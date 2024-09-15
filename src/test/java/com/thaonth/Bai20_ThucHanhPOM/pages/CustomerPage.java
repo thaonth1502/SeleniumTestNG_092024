@@ -42,11 +42,11 @@ public class CustomerPage extends CommonPage {
     private By searchCountry = By.xpath("//button[@data-id='country']/following-sibling::div//input");
     private By buttonSaveCustomer = By.xpath("//div[@id='profile-save-section']//button[normalize-space()='Save']");
     private By alterMessage = By.xpath("//span[@class='alert-title']");
+    private By totalCustomers = By.xpath("//span[normalize-space()='Total Customers']/preceding-sibling::span");
 
 
     //Create Group
     private By buttonCreateGroup = By.xpath("//div[@class='input-group-btn']");
-    private By formCreateGroup = By.xpath("//div[@id='customer_group_modal']");
     private By inputNameGroup = By.xpath("//input[@id='name']");
     private By errorMessage = By.xpath("//p[@id='name-error']");
     private By buttonSaveGroup = By.xpath("//div[@id='customer_group_modal']//button[normalize-space()='Save']");
@@ -56,6 +56,11 @@ public class CustomerPage extends CommonPage {
 
     //Hàm xử lý cho trang Customer
     //Create new Groups
+    public String getTotalCustomers(){
+        WebUI.clickElement(menuCustomers);
+        return WebUI.getElementText(totalCustomers);
+    }
+
     public void createNewGroup(String groupName){
         WebUI.clickElement(buttonCreateGroup);
         driver.switchTo().activeElement();
