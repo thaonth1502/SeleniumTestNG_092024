@@ -17,7 +17,6 @@ public class CustomerPage extends CommonPage {
     public CustomerPage(WebDriver driver){
         super(driver);
         this.driver = driver;
-        new WebUI(driver);
     }
 
     //Elements
@@ -140,15 +139,15 @@ public class CustomerPage extends CommonPage {
         WebUI.setText(searchCountry,countryName);
         WebUI.setKeys(searchCountry,Keys.ENTER);
     }
-    public void checkCustomerDetail(String customerName){
+    public void checkCustomerInTableList(String customerName){
         WebUI.clickElement(menuCustomers);
         WebUI.setText(inputSearchBox, customerName);
         WebUI.sleep(2);
         Assert.assertTrue(WebUI.checkElementExist(firstItemCustomerName), "FAIL!!! The customer name not display in table");
         Assert.assertEquals(WebUI.getElementText(firstItemCustomerName), customerName, "FAIL!!! The customer not match");
-
+    }
+    public void checkCustomerDetail(String customerName){
         WebUI.clickElement(firstItemCustomerName);
-
         //Check content customer detail
         softAssert = new SoftAssert();
 

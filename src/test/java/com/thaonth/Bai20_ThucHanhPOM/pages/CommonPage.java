@@ -1,5 +1,6 @@
 package com.thaonth.Bai20_ThucHanhPOM.pages;
 
+import com.thaonth.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -8,6 +9,7 @@ public class CommonPage {
 
     public CommonPage(WebDriver driver){
         this.driver = driver;
+        new WebUI(driver);
     }
 
     public By menuDashboard = By.xpath("//span[normalize-space()='Dashboard']");
@@ -16,10 +18,18 @@ public class CommonPage {
     public By menuProjects = By.xpath("//span[normalize-space()='Projects']");
     public By menuTasks = By.xpath("//span[normalize-space()='Tasks']");
 
+    public DashboardPage clickMenuDashboard(){
+        WebUI.clickElement(menuDashboard);
+        return new DashboardPage(driver);
+    }
     public CustomerPage clickMenuCustomers(){
-        driver.findElement(menuCustomers).click();
-
+        WebUI.clickElement(menuCustomers);
         return new CustomerPage(driver);
+    }
+
+    public ProjectPage clickMenuProjects(){
+        WebUI.clickElement(menuProjects);
+        return new ProjectPage(driver);
     }
 
 }

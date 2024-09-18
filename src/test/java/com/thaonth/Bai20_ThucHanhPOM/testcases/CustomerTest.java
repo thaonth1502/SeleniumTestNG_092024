@@ -3,6 +3,7 @@ package com.thaonth.Bai20_ThucHanhPOM.testcases;
 import com.thaonth.Bai20_ThucHanhPOM.pages.CustomerPage;
 import com.thaonth.Bai20_ThucHanhPOM.pages.DashboardPage;
 import com.thaonth.Bai20_ThucHanhPOM.pages.LoginPage;
+import com.thaonth.Bai20_ThucHanhPOM.pages.ProjectPage;
 import com.thaonth.common.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,11 +12,12 @@ public class CustomerTest extends BaseTest {
     LoginPage loginPage;
     DashboardPage dashboardPage;
     CustomerPage customerPage;
+    ProjectPage projectPage;
 
     @Test
     public void testAddNewCustomer(){
         loginPage = new LoginPage(driver);
-        String CUSTOMER_NAME = "1509A2 CustomerName";
+        String CUSTOMER_NAME = "1809A3 CustomerName";
         dashboardPage = loginPage.loginCRM("admin@example.com", "123456");
         customerPage = dashboardPage.clickMenuCustomers();
         int beforeTotalCustomers = Integer.parseInt(customerPage.getTotalCustomers());
@@ -23,11 +25,15 @@ public class CustomerTest extends BaseTest {
         customerPage.clickAddNewButton();
         customerPage.inputDataInAddNewCustomerForm(CUSTOMER_NAME);
         customerPage.clickSaveButton();
-        customerPage.checkCustomerDetail(CUSTOMER_NAME);
-
         int afterTotalCustomers = Integer.parseInt(customerPage.getTotalCustomers());
         System.out.println("Total Customer after: " + afterTotalCustomers);
         Assert.assertEquals(afterTotalCustomers, beforeTotalCustomers + 1, "FAIL!!! Total Customer not match.");
+        customerPage.checkCustomerInTableList(CUSTOMER_NAME);
+        customerPage.checkCustomerDetail(CUSTOMER_NAME);
+        projectPage = customerPage.clickMenuProjects();
+        projectPage.clickAddNewProject();
+        projectPage.checkCustomerDisplayInProjectForm(CUSTOMER_NAME);
+
     }
 
     @Test
