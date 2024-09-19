@@ -1,9 +1,9 @@
-package com.thaonth.Bai20_ThucHanhPOM.testcases;
+package com.thaonth.Bai20_21_ThucHanhPOM.testcases;
 
-import com.thaonth.Bai20_ThucHanhPOM.pages.CustomerPage;
-import com.thaonth.Bai20_ThucHanhPOM.pages.DashboardPage;
-import com.thaonth.Bai20_ThucHanhPOM.pages.LoginPage;
-import com.thaonth.Bai20_ThucHanhPOM.pages.ProjectPage;
+import com.thaonth.Bai20_21_ThucHanhPOM.pages.CustomerPage;
+import com.thaonth.Bai20_21_ThucHanhPOM.pages.DashboardPage;
+import com.thaonth.Bai20_21_ThucHanhPOM.pages.LoginPage;
+import com.thaonth.Bai20_21_ThucHanhPOM.pages.ProjectPage;
 import com.thaonth.common.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -17,7 +17,7 @@ public class CustomerTest extends BaseTest {
     @Test
     public void testAddNewCustomer(){
         loginPage = new LoginPage(driver);
-        String CUSTOMER_NAME = "1809A3 CustomerName";
+        String CUSTOMER_NAME = "1809A4 CustomerName";
         dashboardPage = loginPage.loginCRM("admin@example.com", "123456");
         customerPage = dashboardPage.clickMenuCustomers();
         int beforeTotalCustomers = Integer.parseInt(customerPage.getTotalCustomers());

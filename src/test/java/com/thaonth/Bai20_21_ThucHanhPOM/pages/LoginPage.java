@@ -1,7 +1,6 @@
-package com.thaonth.Bai20_ThucHanhPOM.pages;
+package com.thaonth.Bai20_21_ThucHanhPOM.pages;
 
 import com.thaonth.contants.ConfigData;
-import com.thaonth.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;

@@ -1,4 +1,4 @@
-package com.thaonth.Bai20_ThucHanhPOM.pages;
+package com.thaonth.Bai20_21_ThucHanhPOM.pages;
 
 import com.thaonth.keywords.WebUI;
 import org.openqa.selenium.By;
@@ -6,8 +6,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
-
-import java.lang.ref.PhantomReference;
 
 public class CustomerPage extends CommonPage {
 

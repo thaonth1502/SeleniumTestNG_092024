@@ -1,7 +1,7 @@
-package com.thaonth.Bai20_ThucHanhPOM.testcases;
+package com.thaonth.Bai20_21_ThucHanhPOM.testcases;
 
-import com.thaonth.Bai20_ThucHanhPOM.pages.DashboardPage;
-import com.thaonth.Bai20_ThucHanhPOM.pages.LoginPage;
+import com.thaonth.Bai20_21_ThucHanhPOM.pages.DashboardPage;
+import com.thaonth.Bai20_21_ThucHanhPOM.pages.LoginPage;
 import com.thaonth.common.BaseTest;
 import org.testng.annotations.Test;
 
